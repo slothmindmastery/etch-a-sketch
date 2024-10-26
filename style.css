@@ -1,0 +1,19 @@
+#grid{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-basis: stretch;
+  width: 100%;
+}
+
+.square {
+  border: solid;
+  border-color: black
+  border-width: 1px;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
