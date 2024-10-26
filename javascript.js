@@ -14,4 +14,16 @@ const createGrid = function(width, height) {
   }
 }
 
-createGrid (16, 16);
+createGrid (100, 100);
+
+
+const squares = document.querySelectorAll(".square");
+squares.forEach((div) => {
+  div.addEventListener("mouseover", (event) => {
+      event.target.style.backgroundColor = "black";
+  });
+  div.addEventListener("mouseout", (event) => {
+      event.target.style.backgroundColor = "gray";
+  });
+});
+
