@@ -14,7 +14,7 @@ const createGrid = function(width, height) {
   }
 }
 
-createGrid (100, 100);
+createGrid (150, 150);
 
 
 const squares = document.querySelectorAll(".square");
@@ -27,3 +27,20 @@ squares.forEach((div) => {
   });
 });
 
+const clearButton = document.querySelector("#clear-button");
+clearButton.onclick = () => {
+  squares.forEach((square) => {
+    square.style.backgroundColor = "lightgray";
+  });
+};
+
+const gridSizeButton = document.querySelector("#grid-size-button");
+gridSizeButton.onclick = () => {
+  let text;
+  let person = prompt("Please enter the width of your grid", "10");
+  if (person == null || person == "") {
+    ;
+  } else {
+    text = "Hello " + person + "! How are you today?";
+  }
+};
