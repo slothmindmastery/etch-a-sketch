@@ -17,6 +17,7 @@ h1 {
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: white;
 }
 
 .row {
@@ -28,10 +29,11 @@ h1 {
 .square {
   width: 100%;
   aspect-ratio: 1/1;
-  background-color: lightgray;
+  background-color: black;
+  opacity: 0.2;
   border: solid;
   border-width: 0.5px;
-  border-color: gray;
+  border-color: white;
 }
 
 #buttons {

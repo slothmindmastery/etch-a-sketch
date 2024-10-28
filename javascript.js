@@ -1,33 +1,30 @@
 const createGrid = function(width, height) {
   const grid = document.querySelector("#grid");
 
-  for (let i = 0; i < height; i++){
+  for (let i = 0; i < height; i++) {
     const gridRow = document.createElement("div");
     gridRow.setAttribute("class", "row");
     gridRow.setAttribute("id", "row" + i);
-    grid.appendChild(gridRow)
+    grid.appendChild(gridRow);
     
     for (let j = 0; j < width; j++) {
       const gridSquare = document.createElement("div");
       gridSquare.setAttribute("class", "square");
       gridSquare.setAttribute("id", "square " + i + ":" + j);
       gridRow.appendChild(gridSquare);
+
+      gridSquare.addEventListener("mouseover", (event) => {
+        let opacity = parseFloat(getComputedStyle(event.target).opacity); 
+        if (opacity < 1) {
+          opacity += 0.2;
+          event.target.style.opacity = opacity;
+        }
+      });
     }
   }
 }
 
-createGrid (150, 150);
-
-
-const squares = document.querySelectorAll(".square");
-squares.forEach((div) => {
-  div.addEventListener("mouseover", (event) => {
-      event.target.style.backgroundColor = "black";
-  });
-  div.addEventListener("mouseout", (event) => {
-      event.target.style.backgroundColor = "gray";
-  });
-});
+createGrid (50, 50);
 
 const clearButton = document.querySelector("#clear-button");
 clearButton.onclick = () => {
