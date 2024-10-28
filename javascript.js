@@ -1,14 +1,16 @@
 const createGrid = function(width, height) {
   const grid = document.querySelector("#grid");
+
   for (let i = 0; i < height; i++){
     const gridRow = document.createElement("div");
     gridRow.setAttribute("class", "row");
-    gridRow.setAttribute("id","row"+height);
+    gridRow.setAttribute("id", "row" + i);
     grid.appendChild(gridRow)
-    for (let i = 0; i < width; i++) {
+    
+    for (let j = 0; j < width; j++) {
       const gridSquare = document.createElement("div");
       gridSquare.setAttribute("class", "square");
-      gridSquare.setAttribute("id", width + ":" + height);
+      gridSquare.setAttribute("id", "square " + i + ":" + j);
       gridRow.appendChild(gridSquare);
     }
   }
